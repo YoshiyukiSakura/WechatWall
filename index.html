@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>wall</title>
+<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="./wall.css">
+</head>
+<body>
+<div id="wall">
+  <!--v-for指令控制遍历循环，v-bind指令传递从实例传递message变量到组件-->
+  <message v-for="message in messages" v-bind:message="message"></message>
+</div>
+<script type="text/javascript">
+Vue.component('message', {
+  // todo-item 组件现在接受一个
+  // "prop"，类似于一个自定义属性
+  // 这个属性名为 todo。
+  props: ['message'],
+  template: '<div class="message"><img class="avatar" v-bind:src="message.avatar"><p class="content">{{ message.content }}</p></div>'
+})
+//创建Vue实例
+var wall = new Vue({
+  el: '#wall',
+  data: {
+    messages:[]
+  }
+})
+
+wall.messages = [
+  {avatar:"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/image.png?v=md5", content:"hello"}
+]
+</script>
+</body>
+</html>

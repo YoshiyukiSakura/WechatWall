@@ -1,0 +1,19 @@
+.message{
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #dddddd;
+}
+.message .avatar{
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+.message p{
+    margin-top: 0;
+    font-size: 40px;
+}
+.message p::before{
+    content: "："
+}
